@@ -1,3 +1,5 @@
 # Ansible + ChatOps = AwesomeOps
 
+One tenant of a DevOps IT centric culture is the concept of "Codeification of Knowlege". Codeification of Knowlege is about using code to create functional documentation about a particular server state or specific IT proceedures and processes. These functional specs are respeatable and testable. Before that knowledge would have been in an engineers head or Word Document, which either is testable or repeatable. Ansible works very well with "Codeification of Knowlege" by providing a flexible layer of abstraction that is both human readable and writable.
 
+So now that all our knowledge is codeified how do we make it accessable and discoverable? It's human nature to pick the tried and true path over the new one. This unless you have someone to guide you down the enlightened path. This is where ChatOps can help. ChatOps is about bringing tools into the chatroom conversation. By bring those tools into the chatroom others learn the commands by seeing. The chatroom becomes a shared terminal and the knowledge codeified in those tools become accessible to all.
