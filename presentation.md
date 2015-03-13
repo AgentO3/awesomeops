@@ -51,6 +51,10 @@ ansible-playbook -i <span>dev</span> <span>plays</span>.yml -t <span>do-stuff</s
 
 !
 
+## Let's Make It Awesome
+
+!
+
 ## ChatOpsified
 
 hubot plays do-stuff foo=bar fiz=buz
