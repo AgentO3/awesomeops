@@ -1,53 +1,77 @@
-# Evolution Of The Ansible Commands
+# ChatOps + Ansible = AwesomeOps
 
 !
 
-## Explicit Paths
+## ChatOps 30s or Less
 
 !
 
-ansible-playbook -i dev path/to/playbooks/do-stuff.yml -e "foo=bar fiz=buz"
+## Command Evolution
 
 !
 
-## Top Level Playbooks
+## Explicit Path
 
 !
 
-project
-> playbooks
-> > roles
-> > do-stuff.yml
-> plays.yml
-> dev
+
+ansible-playbook -i dev \
+<br/>
+path/to/playbooks/do-stuff.yml \
+<br/>
+-e "foo=bar fiz=buz"
 
 !
 
-- include: playbooks/do-stuff.yml tags=do-stuff
-  vars:
-    foo: bar
-    fiz: buz
+ansible-playbook -i dev \
+<br/>
+<span class="highlight">path/to/playbooks/do-stuff.yml</span> \
+<br/>
+-e "foo=bar fiz=buz"
 
-- include: playbooks/something-else.yml tags=something-else
-  vars:
-      foo: buz
-      fiz: bar
 
 !
 
-## Using Tags
+## Via Tags
 
 !
 
-ansible-playbook -i dev plays.yml -t do-stuff -e "foo=bar fiz=buz"
+ansible-playbook -i dev \
+<br/>
+plays.yml \
+<br/>
+-t do-stuff \
+<br/>
+-e "foo=bar fiz=buz"
 
 !
 
-## Not Bad But I Think We Can Do Better
+ansible-playbook -i dev \
+<br/>
+<span class="highlight">plays.yml</span> \
+<br/>
+-t <span class="highlight">do-stuff</span> \
+<br/>
+-e "foo=bar fiz=buz"
 
 !
 
-ansible-playbook -i <span>dev</span> <span>plays</span>.yml -t <span>do-stuff</span> -e "<span>foo=bar fiz=buz</span>"
+```
+# deploy.yml
+
+include: path/to/playbooks/do-stuff.yml
+...
+
+# do-stuff.yml
+
+hosts: stuff-servers
+tags: ["do-stuff"]
+...
+```
+
+!
+
+![Not Bad](http://fs181.www.ex.ua/show/47847299/47847299.png)
 
 !
 
@@ -55,17 +79,31 @@ ansible-playbook -i <span>dev</span> <span>plays</span>.yml -t <span>do-stuff</s
 
 !
 
+ansible-playbook -i dev \
+<br/>
+plays.yml -t do-stuff \
+<br/>
+-e "foo=bar fiz=buz"
+
+!
+
+ansible-playbook -i <span class="highlight">dev</span> \
+<br/>
+<span class="highlight">plays</span>.yml -t <span class="highlight">do-stuff</span> \
+<br/>
+-e "<span class="highlight">foo=bar fiz=buz</span>"
+
+!
+
 ## ChatOpsified
+
+!
 
 hubot plays do-stuff foo=bar fiz=buz
 
 !
 
-## Where Did The Inventory Go?
-
-!
-
-## Hubot Haz Brainz
+## Where's The Inventory?
 
 !
 
@@ -73,8 +111,4 @@ hubot plays use dev
 
 !
 
-## This is my inventory. There are many like it, but this one is mine.
-
-!
-
-## SUPER HAPPY FUN DEMO TIME!!!
+## SUPER HAPPY <br/> FUN DEMO TIME!!!
