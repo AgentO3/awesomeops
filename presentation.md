@@ -2,6 +2,12 @@
 
 !
 
+@AgentO3
+
+@VividCortex
+
+\#DevOpsCV
+
 ## ChatOps 30s or Less
 
 !
@@ -57,7 +63,7 @@ ansible-playbook -i dev \
 !
 
 ```
-# deploy.yml
+# plays.yml
 
 include: path/to/playbooks/do-stuff.yml
 ...
@@ -112,3 +118,9 @@ hubot plays use dev
 !
 
 ## SUPER HAPPY <br/> FUN DEMO TIME!!!
+
+!
+
+## Thanks DevOps RVA
+
+[Fork It!!!](https://gist.github.com/AgentO3/574b103d205d7a70c167)
